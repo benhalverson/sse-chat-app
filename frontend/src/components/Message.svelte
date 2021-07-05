@@ -3,7 +3,8 @@
   export let message = {
     username: "Unknown",
     message: "",
-    time: Date.now()
+    time: Date.now(),
+    hostname: "Unknown",
   };
 </script>
 

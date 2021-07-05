@@ -45,7 +45,7 @@ app.get('/:channelId/listen', (req, res) => {
   }
   channels[channelId].push({
     id: clientId,
-    res
+    res,
   });
 
   const data = `data: ${JSON.stringify([
@@ -53,6 +53,7 @@ app.get('/:channelId/listen', (req, res) => {
       username: "Bot",
       message: "Welcome! Happy to see you ;)",
       time: Date.now(),
+      hostname: req.hostname,
     },
   ])}\n\n`;
 
