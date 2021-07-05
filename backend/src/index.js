@@ -9,10 +9,11 @@ const channels = {};
 function sendEventsToAll(event, channelId) {
   if (!channels[channelId]) {
     channels[channelId] = [];
+    console.log('channels', channels);
   }
 
   channels[channelId].forEach((c) =>
-    c.res.write(`data: ${JSON.stringifY(event)} \n\n`)
+    c.res.write(`data: ${JSON.stringify(event)} \n\n`)
   );
 }
 
@@ -25,7 +26,7 @@ app.post('/:channelId/send', (req, res) => {
 
   //store the message then boardcast to all clients
   sendEventsToAll(req.body, channelId);
-
+  console.log('req.body', req.body);
   res.send('ok');
 });
 
