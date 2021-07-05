@@ -12,6 +12,15 @@ export const createChannelStore = (channelId) => {
 
   };
 
+  eventSource.onerror = (e) => { 
+    console.log(e);
+  };
+
+  eventSource.onopen = () => {
+    console.log("Connected to channel");
+  };
+
+
   return {
     subscribe,
     reset: () => set([]),

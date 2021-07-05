@@ -33,6 +33,8 @@ app.post('/:channelId/send', (req, res) => {
 
 app.get('/:channelId/listen', (req, res) => {
   console.log('request.hostname', req.hostname);
+  console.log('req.ip', req.ip);
+  console.log('req.originalUrl', req.originalUrl);
   res.writeHead(200, { 'Content-Type': 'text/event-stream' });
 
   const { channelId } = req.params;
