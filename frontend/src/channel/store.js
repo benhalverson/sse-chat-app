@@ -4,7 +4,7 @@ export const createChannelStore = (channelId) => {
   const { subscribe, set, update } = writable([]);
 
   const eventSource = new EventSource(
-    `http://6d86a4205640.ngrok.io/${channelId}/listen`
+    `https://6d86a4205640.ngrok.io/${channelId}/listen`
   );
 
   eventSource.onmessage = (e) => {
