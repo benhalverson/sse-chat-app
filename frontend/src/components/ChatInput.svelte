@@ -47,5 +47,5 @@
 
 <div class="root">
   <textarea bind:value placeholder="Type your message" rows="3" />
-  <button on:click={handleSubmit}>Send</button>
+  <button on:click={handleSubmit} on:tap={handleSubmit}>Send</button>
 </div>
