@@ -27,10 +27,12 @@ app.post('/:channelId/send', (req, res) => {
   //store the message then boardcast to all clients
   sendEventsToAll(req.body, channelId);
   console.log('req.body', req.body);
+  console.log('channelId', channelId);
   res.send('ok');
 });
 
 app.get('/:channelId/listen', (req, res) => {
+  console.log('request.hostname', req.hostname);
   res.writeHead(200, { 'Content-Type': 'text/event-stream' });
 
   const { channelId } = req.params;
